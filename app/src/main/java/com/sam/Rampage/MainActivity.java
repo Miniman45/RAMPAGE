@@ -87,8 +87,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void stopService(View view) {
-
-
+        Intent notificationIntent = new Intent(this,ServiceMine.class);
+        notificationIntent.setAction("stop");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            getApplicationContext().startForegroundService(notificationIntent);
+            Snackbar.make(findViewById(android.R.id.content),"Service Stopped", Snackbar.LENGTH_LONG).show();
+        }
     }
 
     public void startServiceV(View view) {
