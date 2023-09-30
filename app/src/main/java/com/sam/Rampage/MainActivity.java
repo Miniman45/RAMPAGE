@@ -110,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void PopupMenu(View view) {
-        PopUp Menu;
         PopupMenu popupMenu = new PopupMenu(MainActivity.this,view);
         popupMenu.getMenuInflater().inflate(R.menu.popup,popupMenu.getMenu());
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
