@@ -114,5 +114,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void PopupMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(MainActivity.this,view);
+        popupMenu.getMenuInflater().inflate(R.menu.popup,popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                if(item.getItemId() == R.id.changeNum){
+                    startActivity(new Intent(MainActivity.this,RegisterNumberActivity.class));
+                }
+                return true;
+            }
+        });
+        popupMenu.show();
+
     }
-}
+    }
