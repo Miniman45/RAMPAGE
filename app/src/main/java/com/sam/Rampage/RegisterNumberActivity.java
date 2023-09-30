@@ -23,7 +23,11 @@ public class RegisterNumberActivity extends AppCompatActivity {
     public void saveNumber(View view) {
         String numberString = number.getText().toString();
         if(numberString.length()==10){
-
+            SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref",MODE_PRIVATE);
+            SharedPreferences.Editor myEdit = sharedPreferences.edit();
+            myEdit.putString("ENUM", numberString);
+            myEdit.apply();
+            RegisterNumberActivity.this.finish();
         }else {
             Toast.makeText(this, "Enter Valid Number!", Toast.LENGTH_SHORT).show();
         }
