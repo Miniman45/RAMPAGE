@@ -36,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
         if(ENUM.equalsIgnoreCase("NONE")){
             startActivity(new Intent(this,RegisterNumberActivity.class));
         }else {
-
+            TextView textView =  findViewById(R.id.textNum);
+            textView.setText("Emergency Message Will Be Sent To\n"+ENUM);
         }
     }
 
